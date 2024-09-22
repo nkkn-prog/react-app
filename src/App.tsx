@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTrash} from "@fortawesome/free-solid-svg-icons";
 
 interface ToDo {
-    id: number;
-    text: string;
-    completed: boolean;
-}
-
-interface ItemProps {
     id: number;
     text: string;
     completed: boolean;
@@ -46,30 +42,26 @@ function App() {
         );
     }
 
-    const Item = ({ id, text, completed}: ItemProps): JSX.Element => {
-        return (
+    const todoList = toDoList.map((todo) =>
+        <div className="todo-item"　key={todo.id}>
             <div
-                key={id}
-                className="todo-item"
             >
                 <input
                     type="checkbox"
-                    id={`todo-${id}`}
-                    checked={completed}
-                    onChange={() => handleToggleToDo(id)}
+                    id={`todo-${todo.id}`}
+                    checked={todo.completed}
+                    onChange={() => handleToggleToDo(todo.id)}
                 />
-                <label>{text}</label>
+                <label className="todo-text">{todo.text}</label>
             </div>
-        )
-    }
+            <span
+                className="delete-icon"
+                onClick={() => setToDoList((prevList) => prevList.filter((t) => t.id !== todo.id))}
+            >
+                <FontAwesomeIcon icon={faTrash}/>
+            </span>
+        </div>
 
-    const todoList = toDoList.map((todo) =>
-        <Item
-            key={todo.id}
-            id={todo.id}
-            text={todo.text}
-            completed={todo.completed}
-        />
     )
 
     return (

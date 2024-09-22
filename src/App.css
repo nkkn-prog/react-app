@@ -57,9 +57,17 @@ input[type="checkbox"]:checked:before {
 }
 .todo-item {
   display: flex;
-    justify-content: left;
+  justify-content: space-between;
   padding: 0.5rem;
   margin: 0.5rem 0;
+  border-bottom: #1a1a1a 0.5px solid;
+}
+.todo-text {
+  margin-left: 2rem;
+}
+.delete-icon {
+  cursor: pointer;
+  margin-left: 2rem;
 }
 
 @keyframes logo-spin {
