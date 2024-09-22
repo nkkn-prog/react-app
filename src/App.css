@@ -68,6 +68,14 @@ input[type="checkbox"]:checked:before {
 .delete-icon {
   cursor: pointer;
   margin-left: 2rem;
+  transition: ease 0.1s;
+}
+
+.delete-icon:hover {
+  cursor: pointer;
+  color: red;
+  margin-left: 2rem;
+  transition: ease 0.1s;
 }
 
 @keyframes logo-spin {

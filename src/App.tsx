@@ -16,6 +16,7 @@ function App() {
     const [toDoList, setToDoList] = useState<ToDo[]>([]);
     const [inputValue, setInputValue] = useState('');
 
+    // デバッグ用
     useEffect(() => {
         console.log('toDoList updated:', toDoList);
     }, [toDoList]);
