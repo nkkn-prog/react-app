@@ -28,6 +28,39 @@ input[type="checkbox"] {
   -moz-appearance: none;
   appearance: none;
 }
+input[type="checkbox"]:checked:before {
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  transform: rotate(50deg);
+  width: 4px;
+  height: 8px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  content: '';
+}
+.input-todo {
+  width: 60%;
+  height: 2rem;
+  margin: 0.25rem auto 0.5rem auto;
+  border-radius: 8px;
+  border: solid 1px #BCBCBC;
+}
+.add-button {
+    width: 20%;
+    margin: 0 0 0 0.5rem;
+    border-radius: 8px;
+    border: solid 1px #BCBCBC;
+    background-color: #646cff;
+    color: white;
+    cursor: pointer;
+}
+.todo-item {
+  display: flex;
+    justify-content: left;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
 
 @keyframes logo-spin {
   from {
